@@ -327,3 +327,67 @@ nav a:hover {
 .tarjeta:nth-child(3) .arco {
   animation: aparecerArco 1s ease-out 0.8s both;
 }
+
+
+/*------------- Estilos para mejoras JS (activo, volver arriba, estado horario) -------------------*/
+nav a.activo:not(.boton) {
+  color: var(--lila);
+  font-weight: 700;
+  border-bottom: 2px solid var(--lila);
+  padding-bottom: 2px;
+}
+
+nav a.boton.activo {
+  background: var(--lila-oscuro);
+}
+
+.btn-arriba {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--lila);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(47, 38, 57, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+  z-index: 20;
+}
+
+.btn-arriba.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.btn-arriba:hover {
+  background: var(--lila-oscuro);
+}
+
+.estado-horario {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  vertical-align: middle;
+}
+
+.estado-horario.abierto {
+  background: #d1f5df;
+  color: #145a32;
+}
+
+.estado-horario.cerrado {
+  background: #f5d6d6;
+  color: #78281f;
+}
